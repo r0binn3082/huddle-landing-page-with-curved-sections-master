@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Poppins:wght@700&display=swap');
+:root{
+    --button-color: hsl(322, 100%, 66%);
+    --hover-button-color: hsl(321, 100%, 78%);
+    --Light-Red: hsl(0, 100%, 63%);
+    --Very-Dark-Cyan: hsl(192, 100%, 9%);
+    --Very-Pale-Blue: hsl(207, 100%, 98%);
+
+    --ff-headings: 'Poppins';
+    --ff-normal: 'Open Sans';
+
+    --fw-bold: 700 ;
+    --fw-semibpld: 600;
+
+    --gaps: 1.5rem;
+}
+/* css reset */
+/*1. Use a more-intuitive box-sizing model*/
+*, 
+*::before, 
+*::after {
+box-sizing: border-box;
+}
+/*2. Remove default margin*/
+* {
+margin: 0;
+}
+/* 3. Allow percentage-based heights in the application */
+html, 
+body {
+height: 100%;
+}
+/*
+    Typographic tweaks!
+    4. Add accessible line-height
+    5. Improve text rendering
+*/
+body {
+line-height: 1.5;
+-webkit-font-smoothing: antialiased;
+font-size: 0.875rem;
+font-family: var(--ff-normal);
+font-weight: 400;
+}
+/*6. Improve media defaults*/
+img, picture, video, canvas, svg {
+display: block;
+max-width: 100%;
+}
+/* 7. Remove built-in form typography styles */
+input, button, textarea, select {
+font: inherit;
+}
+/*8. Avoid text overflows*/
+p, 
+h1, 
+h2, 
+h3, 
+h4, 
+h5, 
+h6 {
+overflow-wrap: break-word;
+}
+/* 9. Create a root stacking context*/
+#root, 
+#__next {
+isolation: isolate;
+}
+/* utilties */
+button{
+    min-height: 2rem;
+    border-radius: 1rem;
+    border: 2px;
+    font-size: 0.5rem;
+    background-color: var(--button-color);
+    color: white;
+    font-family: var(--ff-headings);
+    min-width: 40%;
+}
+main{
+    text-align: center;
+}
+h1,
+h2,
+.bolded-p{
+    font-family: var(--ff-headings);
+    color: var(--Very-Dark-Cyan);   
+}
+section{
+    padding-block: var(--gaps) ;
+    padding-inline: var(--gaps) ;
+}
+.grid-parent{
+    display: grid;
+    gap: var(--gaps);
+    justify-items: center;
+}
+.normal-p{
+    color: var(--Very-Dark-Cyan);
+    font-family: var(--ff-normal);
+} 
+/* header */
+header{
+    padding-inline:var(--gaps) ;
+    padding-block: var(--gaps);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+} 
+header > button{
+    background-color: transparent;
+    color: var(--hover-button-color);
+    border: var(--hover-button-color) solid 1.5px;
+    position: absolute;
+    right: var(--gaps);
+    min-width: 5rem ;   
+}
+header > img{
+    max-width: clamp(2rem, 40% , 100%);
+} 
+/* numbers and figures */
+.numbers-fig > img{
+    max-width: 2rem ;
+}
+.number{
+    font-size: 7.3ch;
+    font-family: var(--ff-headings);
+}
+/* spicial background color */
+.background-blue{
+    background-color: var(--Very-Pale-Blue);
+}
+.background-blue > .details{
+    font-weight: var(--fw-semibpld);
+}
+/* footer style */
+/* utilties */
+footer{
+    background-color: var(--Very-Dark-Cyan);
+    color: white;
+}
+.footer__bolded-p{font-family: var(--ff-headings); font-weight: var(--fw-bold); }
+.footer__normal-p{font-family: var(--ff-normal);}
+/* news letter */
+.news-letter{
+    display: grid;
+    gap:var(--gaps);
+    padding-block: var(--gaps);
+    padding-inline: var(--gaps);
+    grid-row: 1;
+}
+.footer__input{
+    min-height: 3rem;
+    width: 100%;
+    border-radius: 0.75rem;
+}
+.news-letter > form {
+    display: grid;
+    justify-items: end;
+    gap: 0.8rem;
+}
+/* footer contenet */
+.footer__content{
+    display: grid;
+    gap: var(--gaps);
+    padding-block: var(--gaps) ;
+    padding-inline: var(--gaps) ;
+}
+/*footer contact */
+.footer__contact{
+    display: grid;
+    gap: var(--gaps);
+}
+.footer__contact-fig{
+    display: flex;
+    flex-direction: row;
+    gap: var(--gaps);
+}
+/* hovers */
+button:hover{
+    cursor: pointer;
+    opacity: 0.7;
+}
+/* desktop style */
+@media (min-width: 40em) {
+    .flex-parent-reverse{
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        gap: var(--gaps);
+    }
+    .flex-parent{
+        display: flex;
+        flex-direction: row;
+        gap: var(--gaps);
+        align-items: center;
+    }
+    .number-gap{
+        gap: 14em;
+    }
+    main{
+        padding-inline: var(--gaps);
+    }
+    .fifth{
+        padding: 8em;
+    }
+    footer{
+        padding-inline: var(--gaps);
+    }
+    button{
+        font-size: 0.875rem;
+        min-height: 2.5rem;
+    }
+}
